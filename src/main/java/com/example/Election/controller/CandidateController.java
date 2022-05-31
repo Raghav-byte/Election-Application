@@ -4,6 +4,7 @@ import com.example.Election.models.Candidate;
 import com.example.Election.models.Party;
 import com.example.Election.service.CandidateServices;
 import com.example.Election.service.PartyServices;
+import com.example.Election.service.UserServices;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class CandidateController {
 
     @Autowired
     private CandidateServices candidateServices;
+
+    @Autowired
+    private UserServices userServices;
 
     @Autowired
     private PartyServices partyServices;
@@ -80,5 +84,7 @@ public class CandidateController {
                                            @RequestParam(required = false) Integer fromAge) {
         return candidateServices.filterCandidate(candidateGender,partyId,candidateStatus,fromAge);
     }
+
+
 
 }
