@@ -45,8 +45,8 @@ public class PartyController {
         return partyServices.updateParty(party);
     }
 
-    @ApiOperation("Search by party name")
-    @GetMapping("/search-party")
+    @ApiOperation("Search")
+    @GetMapping("/search")
     public List<Party> searchParty(@RequestParam String name) {
         return partyServices.searchParty(name);
     }

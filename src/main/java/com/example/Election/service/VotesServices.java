@@ -102,19 +102,6 @@ public class VotesServices {
         return partyRepository.findById(party.getPartyId());
     }
 
-
-//    public Party declareWinner() {
-//        AtomicReference<Candidate> candidateAtomicReference = new AtomicReference<>();
-//        candidateRepository.findAll().forEach(candidate -> {
-//            if (candidate.getCandidateVotes() == Candidate.qualifyingCount) {
-//
-//            } else if (candidate.getCandidateVotes() > Candidate.qualifyingCount) {
-//
-//            }else {
-//
-//            }
-//        });
-//    }
 }
 
 
