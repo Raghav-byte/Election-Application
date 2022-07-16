@@ -25,7 +25,7 @@ public class CandidateController {
     @Autowired
     private PartyServices partyServices;
 
-    @ApiOperation("Create candidate")
+    @ApiOperation("Creates candidate")
     @PostMapping("/createCandidate")
     public Candidate createCandidate(@RequestBody Candidate candidate){
         return candidateServices.createCandidate(candidate);
@@ -50,13 +50,13 @@ public class CandidateController {
     }
 
     @ApiOperation("Updates candidate")
-    @PutMapping("/updateCandidate")
+    @PutMapping("/update-Candidate")
     public Candidate updateCandidate(@RequestBody Candidate candidate){
         return candidateServices.updateCandidate(candidate);
     }
 
-    @ApiOperation("Search by candidate name")
-    @GetMapping("/search-candidate")
+    @ApiOperation("Search ")
+    @GetMapping("/search")
     public List<Candidate> searchCandidate(@RequestParam String name) {
         return candidateServices.searchCandidate(name);
     }
