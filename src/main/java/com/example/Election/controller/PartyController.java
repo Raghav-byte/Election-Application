@@ -1,12 +1,9 @@
 package com.example.Election.controller;
-
 import com.example.Election.models.Party;
 import com.example.Election.service.PartyServices;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

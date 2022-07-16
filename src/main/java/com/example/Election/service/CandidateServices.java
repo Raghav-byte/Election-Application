@@ -3,13 +3,10 @@ package com.example.Election.service;
 import com.example.Election.Repository.CandidateRepository;
 import com.example.Election.Repository.PartyRepository;
 import com.example.Election.models.Candidate;
-import com.example.Election.models.Party;
-import org.apache.http.util.TextUtils;
-import org.apache.logging.log4j.util.PropertySource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -39,8 +36,9 @@ public class CandidateServices {
     }
 
     //SHOWS ALL CANDIDATE
-    public List<Candidate> showAllCandidate() {
-        return candidateRepository.findAll();
+    public Page<Candidate> showAllCandidate(int pageNo, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNo, pageSize);
+        return candidateRepository.findAll(pageable);
     }
 
     //SHOWS ONE CANDIDATE

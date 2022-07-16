@@ -1,6 +1,4 @@
 package com.example.Election.controller;
-
-import com.example.Election.models.User;
 import com.example.Election.models.User;
 import com.example.Election.service.UserServices;
 import io.swagger.annotations.ApiOperation;

@@ -1,15 +1,12 @@
 package com.example.Election.controller;
-
 import com.example.Election.models.Candidate;
-import com.example.Election.models.Party;
 import com.example.Election.service.CandidateServices;
 import com.example.Election.service.PartyServices;
 import com.example.Election.service.UserServices;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -36,8 +33,8 @@ public class CandidateController {
 
     @ApiOperation("Show all candidates")
     @GetMapping("/showAllCandidates")
-    public List<Candidate> showAllCandidate(){
-        return candidateServices.showAllCandidate();
+    public Page<Candidate> showAllCandidate(@RequestParam(defaultValue = "0") int pageNo, @RequestParam(defaultValue = "3") int pageSize){
+        return candidateServices.showAllCandidate(pageNo,pageSize);
     }
 
     @ApiOperation("Show one candidate")
@@ -64,17 +61,6 @@ public class CandidateController {
         return candidateServices.searchCandidate(name);
     }
 
-//    @ApiOperation("Filter by candidate gender")
-//    @GetMapping("/candidate-by-gender")
-//    public List<Candidate> filterCandidateByGender(@RequestParam String name) {
-//        return candidateServices.filterCandidateByGender(name);
-//    }
-//
-//    @ApiOperation("Filter by candidate age")
-//    @GetMapping("/candidate-by-age")
-//    public List<Candidate> filterCandidateByAge(@RequestParam String name) {
-//        return candidateServices.filterCandidateByAge(name);
-//    }
 
     @ApiOperation("Filter")
     @GetMapping("/filter")

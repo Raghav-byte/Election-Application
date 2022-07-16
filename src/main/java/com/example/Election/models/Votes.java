@@ -1,9 +1,7 @@
 package com.example.Election.models;
-
 import org.apache.logging.log4j.core.util.UuidUtil;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.util.UUID;
 
 @Document
@@ -13,7 +11,6 @@ public class Votes {
     private UUID voterId;
     private UUID userId;
     private String userName;
-  //  private String voterName;
     private UUID candidateId;
 
     //DEFAULT CONSTRUCTOR
@@ -22,13 +19,6 @@ public class Votes {
     }
 
     //GETTER AND SETTER
-
-//    public String getVoterName() {
-//        return voterName;
-//    }
-//    public void setVoterName(String voterName) {
-//        this.voterName = voterName;
-//    }
     public UUID getVoterId() {
         return voterId;
     }
